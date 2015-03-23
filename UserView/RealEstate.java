@@ -29,6 +29,19 @@ public class RealEstate {
 	private  JTextField txtNoOfBR;
 	///////////////////////////////////
 	
+	// to clear textboxes
+	private  void clearData()
+	  {
+		  txtLotNo.setText("");
+		  txtFname.setText("");                    
+		  txtLname.setText("");                    
+		  txtPrice.setText("");                    
+		  txtsqfeet.setText("");
+		  txtNoOfBR.setText("");
+	  }
+
+	
+	
 
 	/**
 	 * Launch the application.

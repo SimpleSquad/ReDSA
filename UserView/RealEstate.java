@@ -40,6 +40,7 @@ public class RealEstate {
 		  txtNoOfBR.setText("");
 	  }
 
+          // methord use to send data to the text boxes
 		private  void dataViewer(ListHouse house)
 	  {
 		  txtLotNo.setText(Integer.toString(house.lotNumber()));
@@ -50,7 +51,7 @@ public class RealEstate {
 		  txtNoOfBR.setText(Integer.toString(house.bedRooms()));
 	  }
 	
-	
+	//methord we use to get data from the textboxes
 		 private  ListHouse dataRetriver()
 	  {
 	    String lastName;

@@ -40,7 +40,15 @@ public class RealEstate {
 		  txtNoOfBR.setText("");
 	  }
 
-	
+		private  void dataViewer(ListHouse house)
+	  {
+		  txtLotNo.setText(Integer.toString(house.lotNumber()));
+		  txtFname.setText(house.firstName());                    
+		  txtLname.setText(house.lastName());                    
+		  txtPrice.setText(Integer.toString(house.price()));                    
+		  txtsqfeet.setText(Integer.toString(house.squareFeet()));
+		  txtNoOfBR.setText(Integer.toString(house.bedRooms()));
+	  }
 	
 
 	/**

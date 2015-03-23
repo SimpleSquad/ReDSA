@@ -116,4 +116,23 @@ public class HouseFile {
 		}
 
 	}
+
+	public static void streamCloser() 
+	// Closes house info file
+	{
+		
+		try {
+			
+			if (inStreamStatus) reader.close();
+			if (outStreamStatus) writer.close();
+			inStreamStatus = false;
+			outStreamStatus = false;
+			
+		} 
+
+		catch (IOException e) {
+			System.out.println("Issue in "+e); 
+		}
+
+	}
 }

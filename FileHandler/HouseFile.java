@@ -64,5 +64,35 @@ public class HouseFile {
 	else return true;
 	}
 
+	public static ListHouse getNextHouse() 
+	// Gets and returns house information from the house info file
+	// Precondition: reader is open and holds more house information
+	{
+		String lastName = "lname";
+		String firstName = "fname";
+		int lotNumber = 0;
+		int price = 0;
+		int squareFeet = 0;
+		int bedRooms =0;
+		
+		try {		
+			
+			lastName = nextup;
+			firstName = reader.readLine();
+			lotNumber = Integer.parseInt(reader.readLine());
+			price = Integer.parseInt(reader.readLine());
+			squareFeet = Integer.parseInt(reader.readLine());
+			bedRooms = Integer.parseInt(reader.readLine());
+			nextup = reader.readLine();			
+		} 
+
+		catch (IOException e) {
+			System.out.println("Issue in "+e); 
+		}
+		
+		ListHouse house = new ListHouse(lastName, firstName, lotNumber, price,
+		squareFeet, bedRooms);
+		return house;
+
 
 }

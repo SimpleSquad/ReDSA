@@ -96,3 +96,24 @@ public class HouseFile {
 
 
 }
+	
+	public static void writerToFile(ListHouse house) 
+	// Puts parameter house information into the house info file
+	// Precondition: writer is open
+	{
+		try {
+			
+			writer.println(house.lastName());
+			writer.println(house.firstName());
+			writer.println(house.lotNumber());
+			writer.println(house.price());
+			writer.println(house.squareFeet());
+			writer.println(house.bedRooms());
+		} 
+
+		catch (Exception e) {
+			System.out.println("Issue in "+e); 
+		}
+
+	}
+}

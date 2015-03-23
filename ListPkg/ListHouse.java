@@ -15,5 +15,19 @@ public class ListHouse implements Listable{
 		private int price;
 		private int squareFeet;
 		private int bedRooms;
+		
+//The listhouse contain a parametrized constructor to assign the values
+//The values which are passed to this constructor will be stored in the private variables.
+//we return a single object containing lots of details.	
+		public ListHouse(String lastName, String firstName, int lotNumber,
+		int price, int squareFeet, int bedRooms )
+		{
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.lotNumber = lotNumber;
+		this.price = price;
+		this.squareFeet = squareFeet;
+		this.bedRooms = bedRooms;
+		}
   
 }

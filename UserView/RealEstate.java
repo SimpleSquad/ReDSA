@@ -50,6 +50,27 @@ public class RealEstate {
 		  txtNoOfBR.setText(Integer.toString(house.bedRooms()));
 	  }
 	
+	
+		 private  ListHouse dataRetriver()
+	  {
+	    String lastName;
+	    String firstName;
+	    int lotNumber;
+	    int price;
+	    int squareFeet;
+	    int bedRooms;
+
+	    lotNumber = Integer.parseInt(txtLotNo.getText());
+	    firstName = txtFname.getText();                    
+	    lastName = txtLname.getText();                    
+	    price = Integer.parseInt(txtPrice.getText()); 
+	    squareFeet = Integer.parseInt(txtsqfeet.getText());
+	    bedRooms = Integer.parseInt(txtNoOfBR.getText());
+
+	    ListHouse house = new ListHouse(lastName, firstName, lotNumber, price, 
+	                                    squareFeet, bedRooms);
+	    return house;
+	  }
 
 	/**
 	 * Launch the application.

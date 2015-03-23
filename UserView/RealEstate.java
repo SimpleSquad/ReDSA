@@ -261,7 +261,8 @@ public class RealEstate {
 		JButton btnClear = new JButton("Clear");
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				 clearData();
+				 lblstat.setText(list.lengthIs() + " houses on list");
 			}
 		});
 		btnClear.setBounds(0, 49, 105, 39);

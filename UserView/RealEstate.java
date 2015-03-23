@@ -65,12 +65,6 @@ public class RealEstate {
 	 * Create the application.
 	 */
 	
-
-	
-
-	
-	
-	
 	public RealEstate() {
 		initialize();
 		
@@ -112,6 +106,15 @@ public class RealEstate {
 		txtLotNo.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
+			      char c = e.getKeyChar();
+			      if (!((c >= '0') && (c <= '9') ||(c == KeyEvent.VK_BACK_SPACE) ||(c == KeyEvent.VK_DELETE))) 
+			      {
+			      Toolkit.getDefaultToolkit().beep();
+			        e.consume();
+			        lblstat.setText("You Can Only Type Numbers In This Field");
+			      }else{
+			    	  lblstat.setText(" ");
+			      }
 				
 				}
 		});
@@ -133,6 +136,15 @@ public class RealEstate {
 		txtPrice.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
+			      char c = e.getKeyChar();
+			      if (!((c >= '0') && (c <= '9') ||(c == KeyEvent.VK_BACK_SPACE) ||(c == KeyEvent.VK_DELETE))) 
+			      {
+			      Toolkit.getDefaultToolkit().beep();
+			        e.consume();
+			        lblstat.setText("You Can Only Type Numbers In This Field");
+			      }else{
+			    	  lblstat.setText(" ");
+			      }
 				
 			}
 		});
@@ -144,7 +156,15 @@ public class RealEstate {
 		txtsqfeet.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
-
+				 char c = e.getKeyChar();
+			      if (!((c >= '0') && (c <= '9') ||(c == KeyEvent.VK_BACK_SPACE) ||(c == KeyEvent.VK_DELETE))) 
+			      {
+			      Toolkit.getDefaultToolkit().beep();
+			        e.consume();
+			        lblstat.setText("You Can Only Type Numbers In This Field");
+			      }else{
+			    	  lblstat.setText(" ");
+			      }
 				
 			}
 		});

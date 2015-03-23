@@ -37,6 +37,24 @@ public class HouseFile {
 	
 	}
 
+	public static void startWriter() 
+	// Reset file for writing
+	{
+		try {
+			
+			if (inStreamStatus) reader.close();
+			if (outStreamStatus) writer.close();
+			writer = new PrintWriter(new FileWriter("house.txt"));
+			outStreamStatus = true;
+			
+		} 
+		
+		catch (Exception e) {
+			System.out.println("Issue in "+e); 
+		}
+
+	}
+
 	
 
 

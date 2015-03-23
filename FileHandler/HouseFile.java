@@ -18,5 +18,26 @@ public class HouseFile {
 	private static String nextup =""; // Holds "next" line from file
 	// Equals null if at end of file
 
+	public static void startRead() 
+	// Reset file for reading
+	{
+		try {
+			
+			if (inStreamStatus) reader.close();
+			if (outStreamStatus) writer.close();
+			reader = new BufferedReader(new FileReader("house.txt"));
+			inStreamStatus = true;
+			nextup = reader.readLine();
+			
+		} 
+		
+		catch (IOException e) {
+			System.out.println("Issue in "+e); 
+		}
+	
+	}
+
+	
+
 
 }

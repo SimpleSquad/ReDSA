@@ -11,5 +11,12 @@ import ListPkg.*;
 
 public class HouseFile {
 
+	private static BufferedReader reader;
+	private static PrintWriter writer;
+	private static boolean inStreamStatus = false;
+	private static boolean outStreamStatus = false;
+	private static String nextup =""; // Holds "next" line from file
+	// Equals null if at end of file
+
 
 }

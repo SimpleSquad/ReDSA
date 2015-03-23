@@ -55,7 +55,14 @@ public class HouseFile {
 
 	}
 
+	public static boolean isMore() {
+	// Returns true if file open for reading and there is still more house
+	// information available in it
 	
+	if (!inStreamStatus || (nextup == null))
+	return false;
+	else return true;
+	}
 
 
 }

@@ -38,6 +38,31 @@ public class ListHouse implements Listable{
 		return result;
 		}
 		
+		// these methods are used to access the values of private variables
+		public String lastName()
+		{
+		return lastName;
+		}
+		public String firstName()
+		{
+		return firstName;
+		}
+		public int lotNumber()
+		{
+		return lotNumber;
+		}
+		public int price()
+		{
+		return price;
+		}
+		public int squareFeet()
+		{
+		return squareFeet;
+		}
+		public int bedRooms()
+		{
+		return bedRooms;
+		}
 		
   
 }

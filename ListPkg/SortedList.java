@@ -115,6 +115,36 @@ public class SortedList {
 	  }
 
 
+// check availability of houses in the list
+
+	public boolean availability(ListHouse item) {
+		 
+		  boolean moreToSearch;
+		  SortedList pos = starter;
+		  boolean found = false;
+		  moreToSearch = (pos != null);
+		  while (moreToSearch && !found)
+		  {
+		  switch (item.compareTo(pos.house)) {
+			case "Equal":
+				found = true;
+				break;
+				
+			case "Less":
+				moreToSearch = false;
+				break;
+
+			default:
+				  pos = pos.next;
+				  moreToSearch = (pos != null);
+				break;
+			}			
+		}
+
+		return found; // Returns found or not
+	}
+
+
 
 		// this is used to get the needed element
 		  public Listable Fetcher(ListHouse item)  //Listable because copy is listable

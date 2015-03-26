@@ -76,4 +76,26 @@ public class SortedList {
 
 		  }
 
+
+
+	     // this is the deletion methord	  
+		 public void delete (ListHouse item)	 
+	  {	     SortedList pos = starter;
+			// Locate node to be deleted
+		     switch (item.compareTo(pos.house)) {
+			case "Equal":
+				starter = starter.next; // Delete first node
+				break;
+			default:
+				    while (!item.compareTo(pos.next.house).equalsIgnoreCase("Equal"))
+					pos = pos.next;
+					// Delete node at pos.next
+					pos.next = pos.next.next;
+				break;
+			}
+			numItems--;
+
+	  }
+
 }
+

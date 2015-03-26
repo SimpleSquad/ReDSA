@@ -114,6 +114,29 @@ public class SortedList {
 			  return pos.house.copy();
 		  }  
 
+      public void reset()
+	{      // reset to 1 element
+	
+		  currentPos = starter;
+	}
+
+
+
+	
+	  public int lengthIs()
+	         // Returns the number of elements on this list
+	{
+	return numItems;
+	}
+
+
+	
+	  public SortedList getCurrent()
+	  {
+		  return currentPos; 
+	  }
+	  
+
 
 }
 

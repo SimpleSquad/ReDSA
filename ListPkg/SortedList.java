@@ -10,6 +10,7 @@ package ListPkg;
 	private SortedList starter;       // Reference to the first node on the list
 	private int numItems;            // Number of elements in the list.
 	private SortedList currentPos;   // Current position of the selection
+	String flag = "l";
 	            
 		
       // constructor
@@ -171,6 +172,10 @@ package ListPkg;
 			 }
 
 			numItems--;
+			if(numItems ==0)
+				{flag = "o";}
+			else
+				{flag = "l";}
 
 	    }
 

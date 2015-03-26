@@ -78,6 +78,23 @@ public class SortedList {
 
 
 
+	        public Listable getNextItem ()
+		// Returns copy of the next element on this list
+		{ 
+                        if(numItems ==1 && flag=="o")// this is for setting the list when all elements are deleted
+			{                           //or else the current position will be the deleted one
+			if (currentPos.next == null)// if no next go back to beginning
+			currentPos = starter;
+			}
+		    Listable nextItem = currentPos.house.copy();
+			if (currentPos.next == null)// if no next go back to beginning
+				currentPos = starter;			
+			else
+			currentPos = currentPos.next;
+			return nextItem;
+		}
+
+
 	     // this is the deletion methord	  
 		 public void delete (ListHouse item)	 
 	  {	     SortedList pos = starter;

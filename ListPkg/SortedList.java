@@ -97,5 +97,23 @@ public class SortedList {
 
 	  }
 
+
+
+		// this is used to get the needed element
+		  public Listable Fetcher(ListHouse item)  //Listable because copy is listable
+		  {
+			  SortedList pos = starter;
+			  boolean found = false;
+			  while (!found)
+			  {
+			  if (item.compareTo(pos.house).equalsIgnoreCase("Equal")) // If they match
+			  found = true;
+			  else
+			  pos = pos.next;
+			  }
+			  return pos.house.copy();
+		  }  
+
+
 }
 

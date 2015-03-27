@@ -420,6 +420,7 @@ public class RealEstate {
 			        catch (NumberFormatException badHouseData)
 			        {
 			          // text field info incorrectly formated
+			        	lblstat.setText("Wrong format entered");
 			        } 
 			        clearData();
 		             }
@@ -433,6 +434,20 @@ public class RealEstate {
 		panel_3.add(btnNext);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
+
+				 ListHouse house;
+				 if (list.lengthIs() == 0)
+					 lblstat.setText("list is empty!");
+			        else
+			          {
+			          house = (ListHouse)list.getNextItem();
+			          dataViewer(house);
+			          lblstat.setText("Next house displayed");
+			        } 
+
+
+
 			}
 		});
 

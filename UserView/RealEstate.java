@@ -301,6 +301,50 @@ public class RealEstate {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+			 ListHouse house;		
+				if(txtLotNo.getText().isEmpty())
+					lblstat.setText("Please Enter The Lot Number");
+				else if(txtFname.getText().isEmpty())
+					lblstat.setText("Please Enter First Name ");
+				else if(txtLname.getText().isEmpty())
+					lblstat.setText("Please Enter Last Name");
+				else if(txtPrice.getText().isEmpty())
+					lblstat.setText("Please Enter The Price");
+				else if(txtsqfeet.getText().isEmpty())
+					lblstat.setText("Please Enter Squrefeet Amount");
+				else if(txtNoOfBR.getText().isEmpty())
+					lblstat.setText("Please Enter The No Of Bedrooms");
+				else{
+					 try
+			        	{
+			          	house = dataRetriver();
+			          	if (list.availability(house))
+			        	  lblstat.setText("Lot number already in use"); 
+			          else
+			          { 
+			            list.insert(house);
+			            lblstat.setText("House added to list"); 
+			          }
+			     	 //when adding a list item the current position will be null.
+	                         //in order to prevent it after adding the first element we 
+		                 //this will assign an memory location to the first node rather than a null
+			          //insert methord the current position does not change
+			          //to change it we use this
+							 if((list.getCurrent() == null)&&(list.lengthIs()==1))
+						 {					
+					          list.reset();    
+				              house = (ListHouse)list.getNextItem();
+
+						 }					 
+			         
+			        }
+			        catch (NumberFormatException d)
+			        {
+			          // text field info incorrectly formated
+			        	lblstat.setText("You Can Only Type Numbers");
+			        }
+                            }
+
 			}
 		});
 		btnAdd.setBounds(106, 11, 105, 39);

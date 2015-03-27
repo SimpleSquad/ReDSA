@@ -363,6 +363,35 @@ public class RealEstate {
 		JButton btnFind = new JButton("Find");
 		btnFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+		                ListHouse house;
+				 int lotNumber;
+				 
+				 if(txtLotNo.getText().isEmpty())
+						lblstat.setText("Please Enter The Lot Number");				
+					else{
+				 
+			        try
+			        {
+			          lotNumber = Integer.parseInt(txtLotNo.getText());
+			          house = new ListHouse("", "", lotNumber, 0, 0, 0);
+			          if (list.availability(house))
+			          {
+			            house = (ListHouse)list.Fetcher(house);
+			            dataViewer(house);
+			            lblstat.setText("House found"); 
+			          }
+			          else
+			        	  lblstat.setText("House not found");
+			        }
+			        catch (NumberFormatException badHouseData)
+			        {
+			          // text field info incorrectly formated
+			        	lblstat.setText("Number? " + badHouseData.getMessage());
+			        } 
+					}
+
+
+
 			}
 		});
 		btnFind.setBounds(106, 49, 105, 39);

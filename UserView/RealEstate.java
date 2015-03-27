@@ -402,6 +402,29 @@ public class RealEstate {
 		panel_3.add(btnDelete);
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+                                 ListHouse house;					
+				 if(txtLotNo.getText().isEmpty())
+						lblstat.setText("Please Enter The Lot Number");				
+					else{				 
+			        try
+			        {
+			          house = dataRetriver();
+			          if (list.availability(house))
+			          {
+			            list.delete(house);
+			            lblstat.setText("House deleted"); 
+			          }
+			          else
+			        	  lblstat.setText("Lot number not on list"); 
+			        }
+			        catch (NumberFormatException badHouseData)
+			        {
+			          // text field info incorrectly formated
+			        } 
+			        clearData();
+		             }
+
+
 			}
 		});
 		

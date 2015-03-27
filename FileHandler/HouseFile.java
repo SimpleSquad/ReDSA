@@ -18,6 +18,19 @@ public class HouseFile {
 	private static String nextup =""; // Holds "next" line from file
 	// Equals null if at end of file
 
+	public static void checkAvailability()
+	{
+		try {
+			File sourcer = new File("house.txt"); 
+			if(!sourcer.exists())
+			sourcer.createNewFile();
+			
+	        } catch (Exception e) {
+	        	System.out.println("Issue in "+e);
+	                              }			
+	}
+	
+
 	public static void startRead() 
 	// Reset file for reading
 	{

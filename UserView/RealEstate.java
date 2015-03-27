@@ -437,8 +437,10 @@ public class RealEstate {
 		panel_3.add(btnNext);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-
+				 if((list.lengthIs()==1) && list.getCurrent()==null)
+				 {}//this is used to avoid error which happerns when clicking next when adding items to a empty list
+				 //from the start and clicking next because the current position refers as null in the getNextItem()
+				 else{
 				 ListHouse house;
 				 if (list.lengthIs() == 0)
 					 lblstat.setText("list is empty!");
@@ -449,7 +451,7 @@ public class RealEstate {
 			          lblstat.setText("Next house displayed");
 			        } 
 
-
+                             }
 
 			}
 		});

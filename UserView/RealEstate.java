@@ -91,13 +91,35 @@ public class RealEstate {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	public void getStarted()
+	{// Load info from house file into list
+    // If possible insert info about first house into text fields
+		 try {   
+				ListHouse house;
+				HouseFile.checkAvailability();
+				HouseFile.startRead();
+			  
+			    while (HouseFile.isMore())
+			    {
+			      house = HouseFile.getNextHouse();
+			      list.insert(house); //start of items gets ++
+			      
+			    }			   
+			    list.reset();
+			    if (list.lengthIs() != 0)
+			    { 
+			      house = (ListHouse)list.getNextItem();
+			      dataViewer(house);
+			    } 	
+		} catch (Exception e) {
+		
+		}
+	}
+		
 	
 	public RealEstate() {
 		initialize();
-		
+		getStarted();
 		
 	}
 

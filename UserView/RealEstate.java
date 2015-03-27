@@ -128,7 +128,33 @@ public class RealEstate {
 	 */
 	private void initialize() {
 		frmRealestate = new JFrame();
-		frmRealestate.setTitle("RealEstate");		
+		frmRealestate.setTitle("RealEstate");
+				frmRealestate.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				 ListHouse house;
+			        try 
+			        {
+			          // Store info from list into house file
+			          HouseFile.startWriter();
+			          list.reset();
+			          int length = list.lengthIs();
+			          for (int counter = 1; counter <= length; counter++)
+			          {
+			            house = (ListHouse)list.getNextItem();
+			            HouseFile.writerToFile(house);
+			          }
+			          HouseFile.streamCloser();
+			        }
+			        catch (Exception e)
+			        {
+			          System.out.println("Issue in "+e); 
+			                            
+			        }
+			        System.exit(0);                           // Quit the program
+			      }
+			}
+		);
 	
 		frmRealestate.setBounds(100, 100, 335, 445);
 		frmRealestate.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

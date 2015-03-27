@@ -19,6 +19,7 @@ import java.awt.event.KeyEvent;
 import ListPkg.*;
 import FileHandler.HouseFile;
 
+//This is the interface that user see
 public class RealEstate {
 
 	 private  SortedList list = new SortedList();

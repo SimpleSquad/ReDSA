@@ -16,9 +16,12 @@ import java.awt.Toolkit;
 import javax.swing.SwingConstants;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import ListPkg.*;
+import FileHandler.HouseFile;
 
 public class RealEstate {
 
+	 private  SortedList list = new SortedList();
 	///////////////////////////////////
 	private JFrame frmRealestate;
 	private  JTextField txtLotNo;
@@ -454,4 +457,4 @@ public class RealEstate {
 	}
 }
 
-}
+

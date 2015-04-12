@@ -38,6 +38,29 @@ public class ListHouse implements Listable{
 		return result;
 		}
 		
+		public String compareTo(Listable comp)//we used listable because thats how we made it in the interface
+		// Houses are compared based on their lot numbers and helps to find the position
+		{
+			int result;
+		ListHouse other = (ListHouse)comp;
+		 result = this.lotNumber - other.lotNumber;
+		
+		if (result >0) {
+			//if the result is Greater than zero our current lot number is Larger than comparing lot number
+			return "Greater";
+			
+		} else if (result <0) {
+			//if the result is less than zero our current lot number is smaller than comparing lot number
+			return "Less";
+	
+		} else {
+			//if the result is zero that means the lot numbers are equal
+			return "Equal";
+			
+		} 		 
+		
+		}
+		
 		// these methods are used to access the values of private variables
 		public String lastName()
 		{

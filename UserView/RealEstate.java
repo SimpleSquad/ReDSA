@@ -296,7 +296,16 @@ public class RealEstate {
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
+				 ListHouse house;
+				 list.reset();
+			        if (list.lengthIs() == 0)
+			          clearData();
+			        else
+			        {
+			          house = (ListHouse)list.getNextItem();
+			          dataViewer(house);
+			        }
+			        lblstat.setText("List reset"); 
 			}
 		});
 		btnNewButton.setBounds(0, 11, 105, 39);
